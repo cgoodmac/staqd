@@ -1,4 +1,10 @@
-<% if @function == 'push' %>
-  $('#stack').prepend('<div class="box" style="background-color:<%= @color %>"></div>');
-<% else %>
+$('#stack').empty();
+$('#color').val('');
+$('#color').focus();
+
+<% session[:stack].data.each do |color| %>
+  var colorbox = $('<div>');
+  colorbox.addClass('box');
+  colorbox.css('background-color', '<%= color %>');
+  $('#stack').prepend(colorbox);
 <% end %>

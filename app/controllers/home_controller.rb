@@ -8,10 +8,12 @@ class HomeController < ApplicationController
     @function = params[:commit] 
     @color = params[:color]
 
-    if @stack
-    else
-      @stack = Stack.new
+    if @function == 'push'
+      session[:stack].push(@color)
+    elsif @function =='pop'
+      session[:stack].pop
     end
+
   end
 
 end
