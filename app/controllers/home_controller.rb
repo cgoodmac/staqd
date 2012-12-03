@@ -6,6 +6,11 @@ class HomeController < ApplicationController
   def pushpop
     @function = params[:commit] 
     @color = params[:color]
+
+    if @stack
+    else
+      @stack = Stack.new
+    end
   end
 
 end
