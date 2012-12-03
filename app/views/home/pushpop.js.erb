@@ -1,5 +1,4 @@
 <% if @function == 'push' %>
-  //$('#stack').prepend('<div class=#{@color}></div>')
-  $('#stack').prepend('<div class=box></div>')
+  $('#stack').prepend('<div class="box" style="background-color:<%= @color %>"></div>');
 <% else %>
 <% end %>
